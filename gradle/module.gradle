@@ -2,14 +2,13 @@ buildscript {
     repositories {
         maven { url = 'https://files.minecraftforge.net/maven' }
         maven { url = 'https://repo.spongepowered.org/maven' }
-        maven { url = 'https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-gradle-plugin'}
         jcenter()
         mavenCentral()
         gradlePluginPortal()
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '6.+', changing: true
-        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
+        //classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version")
         // rolled back from 4.0.4 to 4.0.1 due to #425: https://github.com/johnrengelman/shadow/issues/425
         classpath 'com.github.jengelman.gradle.plugins:shadow:6.1.0'
@@ -66,18 +65,6 @@ configurations {
 
 minecraft {
     mappings channel: mc_mappings_channel, version: mc_mappings_version
-}
-
-repositories {
-    maven {
-        url = uri("https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-stdlib")
-    }
-    maven {
-        url = uri("https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-reflect")
-    }
-    maven {
-        url = uri("https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-coroutines-core")
-    }
 }
 
 dependencies {
