@@ -103,7 +103,7 @@ class LibClientProxy : LibCommonProxy(), ISelectiveResourceReloadListener {
         // - loads ICU and related files
         // This process seems to take around a second, so frontloading this process prevents stutters when first
         // opening a GUI that uses Bitfont
-        @UseExperimental(ExperimentalBitfont::class)
+        @OptIn(ExperimentalBitfont::class)
         TypesetString(Fonts.classic, AttributedString(('\u0020'..'\u007E').joinToString("")))
     }
 
